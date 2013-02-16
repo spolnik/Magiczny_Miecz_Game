@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="MagicznyMiecz.GUI.LayoutPanels.BoardRingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:LayoutPanels="clr-namespace:MagicznyMiecz.GUI.LayoutPanels">
+        
+    <LayoutPanels:BoardRing x:Name="ring" />
+    
+</UserControl>

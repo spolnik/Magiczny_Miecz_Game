@@ -1,0 +1,91 @@
+﻿<Window x:Class="MagicznyMiecz.GUI.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Views="clr-namespace:MagicznyMiecz.GUI.Views"
+        xmlns:local="clr-namespace:MagicznyMiecz.GUI" 
+        xmlns:ViewModels="clr-namespace:MagicznyMiecz.GUI.ViewModels" 
+        Title="MainWindow" Width="1200" Height="900"
+        Style="{StaticResource ShellStyle}"
+        Background="{StaticResource ShellBG}">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="BoardView">
+                <Views:BoardView />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="240" />
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="Black" BorderThickness="2" Margin="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <!--<HeaderedContentControl Header="Pasek gracza" HorizontalAlignment="Left" x:Name="currentPlayerContainer" />-->
+            <ContentControl Content="{Binding CurrentPlayer}" ContentTemplate="{StaticResource PlayerView}" />
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1" Margin="10">
+            <HeaderedContentControl Header="Mapa" Content="{Binding Board}" ContentTemplate="{StaticResource BoardView}" />
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="1" Margin="4">
+            <HeaderedContentControl Header="Pasek opcji">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="4">
+                        <Button Content="Add new player" Style="{StaticResource GameplayButtonStyle}" Command="{Binding Source={x:Static local:UICommandsRepository.Instance}, Path=Commands[AddNewPlayerCommand]}" />
+                        <Button Content="Begin game" Style="{StaticResource GameplayButtonStyle}" Command="{Binding Source={x:Static local:UICommandsRepository.Instance}, Path=Commands[BeginGameCommand]}" />
+                        <Button Content="Throw dice" Style="{StaticResource GameplayButtonStyle}" Command="{Binding Source={x:Static local:UICommandsRepository.Instance}, Path=Commands[ThrowDiceCommand]}" />
+                        <Button Content="Go clockwise" Style="{StaticResource GameplayButtonStyle}" Command="{Binding Source={x:Static local:UICommandsRepository.Instance}, Path=Commands[GoClockwiseCommand]}" />
+                        <Button Content="Go counterclockwise" Style="{StaticResource GameplayButtonStyle}" Command="{Binding Source={x:Static local:UICommandsRepository.Instance}, Path=Commands[GoCounterclockwiseCommand]}" />
+                        <Button Content="End turn" Style="{StaticResource GameplayButtonStyle}" Command="{Binding Source={x:Static local:UICommandsRepository.Instance}, Path=Commands[EndTurnCommand]}" />
+                    </StackPanel>
+                    <!--<StackPanel Grid.Row="1" Orientation="Vertical" x:Name="cards" />-->
+                    <ItemsControl Grid.Row="1" Margin="10" ItemsSource="{Binding Cards}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" CanVerticallyScroll="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type ViewModels:CardViewModel}">
+                                <Views:CardView />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </HeaderedContentControl>
+        </Border>
+
+        <!--<Border BorderBrush="Red" BorderThickness="2" Margin="4" Grid.Row="2">
+            <StackPanel x:Name="Cards" Orientation="Horizontal" />
+        </Border>-->
+
+        <!--<StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="diceResultView" Orientation="Horizontal" Margin="0,0,10,0" />-->
+
+        <ItemsControl Grid.Column="1" ItemsSource="{Binding DiceResults}" Margin="10">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Views:CubeControl />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </Grid>
+
+</Window>

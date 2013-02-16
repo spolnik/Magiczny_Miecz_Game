@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B510A1A-2CB5-4B8F-BD56-6A15D347788E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagicznyMiecz.GUI</RootNamespace>
+    <AssemblyName>MagicznyMiecz.GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.3.1.416.3\lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converters\EnableToolTipConverter.cs" />
+    <Compile Include="Converters\ZeroVisibilityConverterConverter.cs" />
+    <Compile Include="Converters\LifeToForegroundConverter.cs" />
+    <Compile Include="Converters\DiceConverter.cs" />
+    <Compile Include="Converters\LifeToFontSizeConverter.cs" />
+    <Compile Include="Converters\NumberColorConverter.cs" />
+    <Compile Include="DialogWindows\FightCommandsView.xaml.cs">
+      <DependentUpon>FightCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWindows\SpecialCommandsView.xaml.cs">
+      <DependentUpon>SpecialCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutPanels\BoardRingControl.xaml.cs">
+      <DependentUpon>BoardRingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UICommandsRepository.cs" />
+    <Compile Include="ViewModels\BoardFieldViewModel.cs" />
+    <Compile Include="ViewModels\CharacterPickerViewModel.cs" />
+    <Compile Include="ViewModels\DiceResult.cs" />
+    <Compile Include="ViewModels\ItemsBagViewModel.cs" />
+    <Compile Include="ViewModels\Ring.cs" />
+    <Compile Include="ViewModels\SpecialCommandsViewModel.cs" />
+    <Compile Include="Views\BoardFieldView.xaml.cs">
+      <DependentUpon>BoardFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BoardViewModel.cs" />
+    <Compile Include="ViewModels\CardViewModel.cs" />
+    <Compile Include="Views\BoardView.xaml.cs">
+      <DependentUpon>BoardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CardView.xaml.cs">
+      <DependentUpon>CardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterPickerView.xaml.cs">
+      <DependentUpon>CharacterPickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CubeControl.xaml.cs">
+      <DependentUpon>CubeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\PlayerViewModel.cs" />
+    <Compile Include="Views\ItemsBagView.xaml.cs">
+      <DependentUpon>ItemsBagView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerView.xaml.cs">
+      <DependentUpon>PlayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolVisibilityConverter.cs" />
+    <Compile Include="DialogWindows\AddNewPlayerWindow.xaml.cs">
+      <DependentUpon>AddNewPlayerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutPanels\BoardRing.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Page Include="DialogWindows\FightCommandsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DialogWindows\SpecialCommandsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LayoutPanels\BoardRingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Styles\ShellStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Styles\DialogWindowButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Styles\GameplayButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Views\BoardFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BoardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterPickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CubeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ItemsBagView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogWindows\AddNewPlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MagicznyMiecz.Common\MagicznyMiecz.Common.csproj">
+      <Project>{0F4C62D2-3BEF-492D-8D31-DAE1B0DFB03F}</Project>
+      <Name>MagicznyMiecz.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagicznyMiecz.Engine\MagicznyMiecz.Engine.csproj">
+      <Project>{D190BDFF-2184-46E5-8105-279C5BD0D6E0}</Project>
+      <Name>MagicznyMiecz.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\talizman.jpg" />
+    <Resource Include="Images\unknown.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

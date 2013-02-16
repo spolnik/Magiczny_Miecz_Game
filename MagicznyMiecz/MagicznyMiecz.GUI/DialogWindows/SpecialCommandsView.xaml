@@ -1,0 +1,38 @@
+﻿<Window x:Class="MagicznyMiecz.GUI.DialogWindows.SpecialCommandsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:GUI="clr-namespace:MagicznyMiecz.GUI"
+        Title="Co chcesz zrobić?" Height="200" Width="600">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/DialogWindowButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Stretch" Margin="10" Text="Co chcesz zrobić?" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="24" TextAlignment="Center" FontWeight="Bold" />
+        
+        <ItemsControl Grid.Row="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ItemsSource="{Binding SpecialCommands}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}" Command="{Binding Source={x:Static GUI:UICommandsRepository.Instance}, Path=Commands[SpecialCommand]}" CommandParameter="{Binding Name}" Style="{StaticResource GameplayButtonStyle}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Button Grid.Row="2" Width="120" Style="{StaticResource GameplayButtonStyle}" Command="{Binding NothingCommand}" Content="Nie rób nic" />
+    </Grid>
+</Window>

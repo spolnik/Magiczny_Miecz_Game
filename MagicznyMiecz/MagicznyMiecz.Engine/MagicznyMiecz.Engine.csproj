@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D190BDFF-2184-46E5-8105-279C5BD0D6E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagicznyMiecz.Engine</RootNamespace>
+    <AssemblyName>MagicznyMiecz.Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Commands\CommandHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\CzarciMlynCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\GrodCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\KarczmaCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\KragMocyCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\KurhanCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\LasBlednychOgniCommand.cs" />
+    <Compile Include="Core\Commands\MagiczneWrotaCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\OsadaCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\PrzeleczWichrowCommand.cs" />
+    <Compile Include="Core\Commands\PrzeprawaCommand.cs" />
+    <Compile Include="Core\Commands\PustelniaCommand.cs" />
+    <Compile Include="Core\Commands\StraznikMagicznychWrotCommand.cs" />
+    <Compile Include="Core\Commands\StudniaWiecznosciCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\SwiatyniaBoginiNemedCommand.cs" />
+    <Compile Include="Core\Commands\TwierdzaStrzegacaDrogCommand.cs" />
+    <Compile Include="Core\Commands\UroczyskoCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\WiezaPrzeznaczeniaCommand.cs" />
+    <Compile Include="Core\EvalCardsResult.cs" />
+    <Compile Include="Core\FightResult.cs" />
+    <Compile Include="Core\StandardCreature.cs" />
+    <Compile Include="Core\StandardMagicCreature.cs" />
+    <Compile Include="Data\SpecialEventResult.cs" />
+    <Compile Include="Utility\Bag.cs" />
+    <Compile Include="Core\Character.cs" />
+    <Compile Include="Core\Item.cs" />
+    <Compile Include="Core\StandardBoard.cs" />
+    <Compile Include="Core\StandardBoardDefinition.cs" />
+    <Compile Include="Core\StandardCard.cs" />
+    <Compile Include="Core\StandardPosition.cs" />
+    <Compile Include="Core\StandardRules.cs" />
+    <Compile Include="Core\GameFactory.cs" />
+    <Compile Include="Core\MagicznyMieczGame.cs" />
+    <Compile Include="Data\CharacterRepository.cs" />
+    <Compile Include="Data\ItemRepository.cs" />
+    <Compile Include="Data\Repository.cs" />
+    <Compile Include="Data\SimpleCardsRepositoryInitialzier.cs" />
+    <Compile Include="Data\SimpleCharacterRepositoryInitializer.cs" />
+    <Compile Include="Data\SimpleItemsRepositoryInitializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\StandardPlayer.cs" />
+    <Compile Include="Data\CardRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MagicznyMiecz.Common\MagicznyMiecz.Common.csproj">
+      <Project>{0F4C62D2-3BEF-492D-8D31-DAE1B0DFB03F}</Project>
+      <Name>MagicznyMiecz.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

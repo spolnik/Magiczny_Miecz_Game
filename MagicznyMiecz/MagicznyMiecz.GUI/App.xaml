@@ -1,0 +1,43 @@
+﻿<Application x:Class="MagicznyMiecz.GUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ViewModels="clr-namespace:MagicznyMiecz.GUI.ViewModels" xmlns:Controls="clr-namespace:MagicznyMiecz.GUI.Views">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/GameplayButtonStyle.xaml" />
+                <ResourceDictionary Source="Styles/ShellStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <Style TargetType="{x:Type Control}">
+                <Setter Property="FontFamily" Value="Footlight MT Light" />
+            </Style>
+
+            <DataTemplate x:Key="PlayerView" DataType="{x:Type ViewModels:PlayerViewModel}">
+                <Controls:PlayerView />
+            </DataTemplate>
+
+            <Style TargetType="{x:Type Window}" x:Key="ShellStyle">
+                <Setter Property="FontFamily" Value="Footlight MT Light" />
+                <Setter Property="TextElement.Foreground" Value="GhostWhite" />
+            </Style>
+
+            <!--<SolidColorBrush x:Uid="SolidBrush" x:Key="MySolidBrush" Color="Red"/>
+            <SolidColorBrush x:Uid="InnerBrush" x:Key="MyInnerBrush" Color="Red" Opacity="0.05"/>
+
+            <Style x:Key="rfv" TargetType="{x:Type TextBox}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
+
+                        <Setter Property="TextBox.BorderBrush" Value="{StaticResource MySolidBrush}" />
+
+                        <Setter Property="TextBox.Background" Value="{StaticResource MyInnerBrush}"/>
+
+                        <Setter Property="TextBox.ToolTip" Value="This Field is Mandatory"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

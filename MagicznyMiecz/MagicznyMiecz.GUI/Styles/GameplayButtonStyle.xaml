@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	
+	<SolidColorBrush x:Key="GameplayButtonForegroundColorBrush" Color="#FFA70000" />
+    
+    <Style x:Key="GameplayButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="180" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Margin" Value="4, 2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                		<Path x:Name="bg" Data="M58.500305,0 L60.276794,0 60.597332,0.5469929 C62.315605,3.3316904 64.504662,4.9999987 66.88855,4.9999996 L112.34776,4.9999996 112.33813,5.0263044 C112.04594,5.9656931 111.88855,6.9644648 111.88855,7.9999973 111.88855,12.142134 114.40695,15.696066 117.99609,17.214152 L118.7771,17.499999 117.99609,17.785849 C114.40695,19.303931 111.88855,22.857863 111.88855,26.999999 111.88855,28.035533 112.04594,29.034308 112.33813,29.973691 L112.34776,29.999999 66.88855,29.999999 C64.504662,29.999999 62.315605,31.668311 60.597332,34.453007 L60.276794,35.000001 58.500305,35.000001 58.179768,34.453007 C56.461494,31.668311 54.272434,29.999999 51.88855,29.999999 L6.4293451,29.999999 6.4389696,29.973691 C6.7311516,29.034308 6.8885498,28.035533 6.8885508,26.999999 6.8885498,22.857863 4.370152,19.303931 0.78100228,17.785849 L0,17.499999 0.78100228,17.214152 C4.370152,15.696066 6.8885498,12.142134 6.8885508,7.9999973 6.8885498,6.9644648 6.7311516,5.9656931 6.4389696,5.0263044 L6.4293404,4.9999996 51.88855,4.9999996 C54.272434,4.9999987 56.461494,3.3316904 58.179768,0.5469929 z" HorizontalAlignment="Stretch" Stretch="Fill" StrokeThickness="2" Stroke="{DynamicResource GameplayButtonForegroundColorBrush}">
+                			<Path.Fill>
+                				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                					<GradientStop Color="#FF686868" Offset="0"/>
+                					<GradientStop Color="#FF313131" Offset="1"/>
+                					<GradientStop Color="#FF1B1B1B" Offset="0.49"/>
+                					<GradientStop Color="#FF161616" Offset="0.51"/>
+                				</LinearGradientBrush>
+                			</Path.Fill>
+                		</Path>
+                		<Path x:Name="highlight" Data="M58.500305,0 L60.276794,0 60.597332,0.5469929 C62.315605,3.3316904 64.504662,4.9999987 66.88855,4.9999996 L112.34776,4.9999996 112.33813,5.0263044 C112.04594,5.9656931 111.88855,6.9644648 111.88855,7.9999973 111.88855,12.142134 114.40695,15.696066 117.99609,17.214152 L118.7771,17.499999 117.99609,17.785849 C114.40695,19.303931 111.88855,22.857863 111.88855,26.999999 111.88855,28.035533 112.04594,29.034308 112.33813,29.973691 L112.34776,29.999999 66.88855,29.999999 C64.504662,29.999999 62.315605,31.668311 60.597332,34.453007 L60.276794,35.000001 58.500305,35.000001 58.179768,34.453007 C56.461494,31.668311 54.272434,29.999999 51.88855,29.999999 L6.4293451,29.999999 6.4389696,29.973691 C6.7311516,29.034308 6.8885498,28.035533 6.8885508,26.999999 6.8885498,22.857863 4.370152,19.303931 0.78100228,17.785849 L0,17.499999 0.78100228,17.214152 C4.370152,15.696066 6.8885498,12.142134 6.8885508,7.9999973 6.8885498,6.9644648 6.7311516,5.9656931 6.4389696,5.0263044 L6.4293404,4.9999996 51.88855,4.9999996 C54.272434,4.9999987 56.461494,3.3316904 58.179768,0.5469929 z" HorizontalAlignment="Stretch" Stretch="Fill" StrokeThickness="2" Margin="2" Opacity="0">
+                			<Path.Fill>
+                				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                					<GradientStop Color="#19808080" Offset="0"/>
+                					<GradientStop Color="#19808080" Offset="1"/>
+                					<GradientStop Color="#3F808080" Offset="0.5"/>
+                				</LinearGradientBrush>
+                			</Path.Fill>
+                		</Path>
+                		<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                		<Path x:Name="darken" Data="M58.500305,0 L60.276794,0 60.597332,0.5469929 C62.315605,3.3316904 64.504662,4.9999987 66.88855,4.9999996 L112.34776,4.9999996 112.33813,5.0263044 C112.04594,5.9656931 111.88855,6.9644648 111.88855,7.9999973 111.88855,12.142134 114.40695,15.696066 117.99609,17.214152 L118.7771,17.499999 117.99609,17.785849 C114.40695,19.303931 111.88855,22.857863 111.88855,26.999999 111.88855,28.035533 112.04594,29.034308 112.33813,29.973691 L112.34776,29.999999 66.88855,29.999999 C64.504662,29.999999 62.315605,31.668311 60.597332,34.453007 L60.276794,35.000001 58.500305,35.000001 58.179768,34.453007 C56.461494,31.668311 54.272434,29.999999 51.88855,29.999999 L6.4293451,29.999999 6.4389696,29.973691 C6.7311516,29.034308 6.8885498,28.035533 6.8885508,26.999999 6.8885498,22.857863 4.370152,19.303931 0.78100228,17.785849 L0,17.499999 0.78100228,17.214152 C4.370152,15.696066 6.8885498,12.142134 6.8885508,7.9999973 6.8885498,6.9644648 6.7311516,5.9656931 6.4389696,5.0263044 L6.4293404,4.9999996 51.88855,4.9999996 C54.272434,4.9999987 56.461494,3.3316904 58.179768,0.5469929 z" HorizontalAlignment="Stretch" Stretch="Fill" StrokeThickness="2" Fill="#66000000" Opacity="0"/>
+                	</Grid>
+                	<ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="highlight" Property="Opacity" Value="1.0" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="darken" Property="Opacity" Value="1.0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="highlight" Property="Opacity" Value="0.0" />
+                            <Setter TargetName="darken" Property="Opacity" Value="1.0" />
+                            <Setter TargetName="bg" Property="Stroke" Value="DarkGray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="{DynamicResource GameplayButtonForegroundColorBrush}"/>
+        <Setter Property="FontSize" Value="18.667"/>
+        <Setter Property="FontFamily" Value="Footlight MT Light"/>
+    </Style>
+    
+</ResourceDictionary>

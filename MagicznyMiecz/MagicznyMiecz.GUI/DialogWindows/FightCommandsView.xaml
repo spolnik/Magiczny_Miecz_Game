@@ -1,0 +1,30 @@
+﻿<Window x:Class="MagicznyMiecz.GUI.DialogWindows.FightCommandsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:GUI="clr-namespace:MagicznyMiecz.GUI"
+        Title="Co chcesz zrobić?" Height="200" Width="450">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/DialogWindowButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Stretch" Margin="10" Text="Co chcesz zrobić?" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="24" TextAlignment="Center" FontWeight="Bold" />
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" HorizontalAlignment="Center">
+            <Button Style="{StaticResource GameplayButtonStyle}" Content="Walka" Command="{Binding Source={x:Static GUI:UICommandsRepository.Instance}, Path=Commands[FightCommand]}" CommandParameter="Might" />
+            <Button Style="{StaticResource GameplayButtonStyle}" Content="Walka Magiczna" Command="{Binding Source={x:Static GUI:UICommandsRepository.Instance}, Path=Commands[FightCommand]}" CommandParameter="Magic" />
+        </StackPanel>
+
+        <Button Grid.Row="2" Width="120" Style="{StaticResource GameplayButtonStyle}" Command="{Binding NothingCommand}" Content="Nie rób nic" />
+    </Grid>
+</Window>

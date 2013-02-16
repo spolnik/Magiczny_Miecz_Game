@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="MagicznyMiecz.GUI.Views.PlayerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:MagicznyMiecz.GUI.Converters" xmlns:ViewModels="clr-namespace:MagicznyMiecz.GUI.ViewModels" xmlns:Views="clr-namespace:MagicznyMiecz.GUI.Views">
+
+	<UserControl.Resources>
+		<Converters:NumberColorConverter x:Key="NumberColorConverter" />
+		<Converters:LifeToFontSizeConverter x:Key="LifeToFontSizeConverter" />
+		<Converters:LifeToForegroundConverter x:Key="LifeToForegroundConverter" />
+		<Converters:ZeroVisibilityConverter x:Key="ZeroVisibilityConverter" />
+		<Converters:EnableToolTipConverter x:Key="EnableToolTipConverter" />
+	</UserControl.Resources>
+	<Border BorderBrush="Green" BorderThickness="2" Margin="2" Padding="4">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--<TextBlock Text="Id" Grid.Column="0" />
+            <TextBlock Name="textBlockId" Text="{Binding Id}" Margin="0,0,1,0" Grid.Row="1" Grid.Column="0" />-->
+            <Rectangle Grid.RowSpan="2" Fill="{Binding Id, Converter={StaticResource NumberColorConverter}}" Margin="10" />
+
+            <TextBlock Text="Name" Grid.Column="1" />
+            <TextBlock Name="textBlockName" Text="{Binding Name}" Margin="0,0,1,0" Grid.Column="2" />
+            
+            <TextBlock Text="Postać" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+            <TextBlock Name="textBlockCharacter" Text="{Binding Character.Name}" Margin="0,0,1,0" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+
+            <TextBlock Text="SkipTurn" Grid.Column="1" Grid.Row="2" />
+            <TextBlock Name="textBlockSkipTurn" Text="{Binding SkipTurn}" Margin="0,0,1,0" Grid.Row="2" Grid.Column="2" />
+
+            <TextBlock Text="Position" Grid.Column="1" Grid.Row="4" />
+            <TextBlock Name="textBlockPosition" Text="{Binding Position.Id}" Margin="0,0,1,0" Grid.Row="4" Grid.Column="2" />
+
+            <TextBlock Text="Miecz" Grid.Column="3" Grid.Row="2" />
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="4">
+                <TextBlock Text="{Binding Character.PureMight}" Margin="0,0,1,0" />
+                <TextBlock Text=" (" Foreground="GhostWhite">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource ZeroVisibilityConverter}">
+                            <Binding Path="Character.PureMight" />
+                            <Binding Path="Character.Might" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
+                </TextBlock>
+                <TextBlock Text="{Binding Character.Might}" Foreground="GhostWhite">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource ZeroVisibilityConverter}">
+                            <Binding Path="Character.PureMight" />
+                            <Binding Path="Character.Might" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
+                </TextBlock>
+                <TextBlock Text=")" Foreground="GhostWhite">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource ZeroVisibilityConverter}">
+                            <Binding Path="Character.PureMight" />
+                            <Binding Path="Character.Might" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
+                </TextBlock>
+            </StackPanel>
+            
+
+            <TextBlock Text="Magia" Grid.Column="3" Grid.Row="3" />
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="4">
+                <TextBlock Text="{Binding Character.PureMagic}" Margin="0,0,1,0" />
+                <TextBlock Text=" (" Foreground="GhostWhite">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource ZeroVisibilityConverter}">
+                            <Binding Path="Character.PureMagic" />
+                            <Binding Path="Character.Magic" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
+                </TextBlock>
+                <TextBlock Text="{Binding Character.Magic}" Foreground="GhostWhite">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource ZeroVisibilityConverter}">
+                            <Binding Path="Character.PureMagic" />
+                            <Binding Path="Character.Magic" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
+                </TextBlock>
+                <TextBlock Text=")" Foreground="GhostWhite">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource ZeroVisibilityConverter}">
+                            <Binding Path="Character.PureMagic" />
+                            <Binding Path="Character.Magic" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
+                </TextBlock>
+            </StackPanel>
+
+            <TextBlock Text="Złoto" Grid.Column="3" Grid.Row="4" />
+            <TextBlock Name="textBlockGold" Text="{Binding Character.Gold}" Margin="0,0,1,0" Grid.Row="4" Grid.Column="4" />
+            
+            <TextBlock Text="Życia" Grid.Column="3" Grid.Row="5" />
+            <TextBlock Name="textBlockLife"
+                       Text="{Binding Character.Life}"
+                       FontSize="{Binding Character.Life, Converter={StaticResource LifeToFontSizeConverter}}"
+                       Foreground="{Binding Character.Life, Converter={StaticResource LifeToForegroundConverter}}"
+                       Margin="0,0,1,0" Grid.Row="5" Grid.Column="4" />
+
+            <TextBlock Text="Natura" Grid.Column="6" />
+            <TextBlock Name="textBlockNature" Text="{Binding Character.Nature}" Margin="0,0,1,0" Grid.Row="1" Grid.Column="6" />
+            
+            <Grid Grid.Column="7" Grid.RowSpan="6" Margin="10">
+                <Rectangle RadiusX="4" RadiusY="8" Fill="Brown" />
+                <TextBlock Text="ITEMS" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" />
+                <Grid.ToolTip>
+                    <ContentControl Content="{Binding Bag}" Visibility="{Binding Character, Converter={StaticResource EnableToolTipConverter}}">
+                        <ContentControl.ContentTemplate>
+                            <DataTemplate DataType="{x:Type ViewModels:ItemsBagViewModel}">
+                                <Views:ItemsBagView />
+                            </DataTemplate>
+                        </ContentControl.ContentTemplate>
+                    </ContentControl>
+                </Grid.ToolTip>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

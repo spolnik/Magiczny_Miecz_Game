@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F4C62D2-3BEF-492D-8D31-DAE1B0DFB03F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagicznyMiecz.Common</RootNamespace>
+    <AssemblyName>MagicznyMiecz.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BoardState.cs" />
+    <Compile Include="Core\CardType.cs" />
+    <Compile Include="Core\GameState.cs" />
+    <Compile Include="Core\ICreature.cs" />
+    <Compile Include="Core\IEvalCardsResult.cs" />
+    <Compile Include="Core\IFightResult.cs" />
+    <Compile Include="Core\ISpecialCommand.cs" />
+    <Compile Include="Data\ISpecialEventResult.cs" />
+    <Compile Include="Utility\CoreExtensions.cs" />
+    <Compile Include="Utility\IBag.cs" />
+    <Compile Include="Core\IBoard.cs" />
+    <Compile Include="Core\ICard.cs" />
+    <Compile Include="Core\ICharacter.cs" />
+    <Compile Include="Core\IEditableCharacter.cs" />
+    <Compile Include="Data\ICardRepository.cs" />
+    <Compile Include="Data\IEditableRepository.cs" />
+    <Compile Include="Core\IGame.cs" />
+    <Compile Include="Core\IItem.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\IRepositoryInitializer.cs" />
+    <Compile Include="Core\IRules.cs" />
+    <Compile Include="Core\Nature.cs" />
+    <Compile Include="Core\PlayerHasNoLifePointsException.cs" />
+    <Compile Include="Core\IDisplayElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\IPlayer.cs" />
+    <Compile Include="Core\IPosition.cs" />
+    <Compile Include="Utility\Dice.cs" />
+    <Compile Include="Utility\GameConstants.cs" />
+    <Compile Include="Utility\INamedElement.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

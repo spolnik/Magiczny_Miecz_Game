@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MagicznyMiecz.GUI.Views.CubeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:Converters="clr-namespace:MagicznyMiecz.GUI.Converters" Width="50" Height="50">
+    
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Ellipse}">
+            <Setter Property="Fill" Value="Black" />
+            <Setter Property="Width" Value="8" />
+            <Setter Property="Height" Value="8" />
+        </Style>
+        
+        <Converters:DiceConverter x:Key="DiceConverter" />
+        
+    </UserControl.Resources>
+    
+    <Border BorderThickness="2" BorderBrush="Black" Background="GhostWhite" CornerRadius="4" Margin="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Ellipse Grid.Row="0" Grid.Column="0" x:Name="e0" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=0}" />
+            <Ellipse Grid.Row="1" Grid.Column="0" x:Name="e1" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=1}" />
+            <Ellipse Grid.Row="2" Grid.Column="0" x:Name="e2" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=2}" />
+            <Ellipse Grid.Row="1" Grid.Column="1" x:Name="e3" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=3}" />
+            <Ellipse Grid.Row="0" Grid.Column="2" x:Name="e4" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=4}" />
+            <Ellipse Grid.Row="1" Grid.Column="2" x:Name="e5" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=5}" />
+            <Ellipse Grid.Row="2" Grid.Column="2" x:Name="e6" Visibility="{Binding Dice, Converter={StaticResource DiceConverter}, ConverterParameter=6}" />
+        </Grid>
+        
+        
+        
+    </Border>
+</UserControl>

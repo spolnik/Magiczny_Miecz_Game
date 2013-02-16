@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E69B7D26-7802-4330-AC41-8DE51D1258BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagicznyMiecz.Tests</RootNamespace>
+    <AssemblyName>MagicznyMiecz.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.3.1.416.3\lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.8.10295, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoreTest\CommandTest\CzarciMlynCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\GrodCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\KarczmaCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\KragMocyCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\KurhanCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\LasBlednychOgniCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\MagiczneWrotaCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\OsadaCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\PrzeleczWichrowCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\PrzeprawaCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\PustelniaCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\StraznikMagicznychWrotCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\StudniaWiecznosciCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\SwiatyniaBoginiNemedCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\TwierdzaStrzegacaDrogCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\UroczyskoCommandTest.cs" />
+    <Compile Include="CoreTest\CommandTest\WiezaPrzeznaczeniaCommandTest.cs" />
+    <Compile Include="CoreTest\StandardBoardTest.cs" />
+    <Compile Include="CoreTest\StandardPositionTest.cs" />
+    <Compile Include="Data\CardRepositoryInitializerTest.cs" />
+    <Compile Include="CoreTest\CardTest.cs" />
+    <Compile Include="Data\CharacterRepositoryInitializerTest.cs" />
+    <Compile Include="Data\CharacterRepositoryTest.cs" />
+    <Compile Include="CoreTest\CharacterTest.cs" />
+    <Compile Include="Data\ItemRepositoryInitializerTest.cs" />
+    <Compile Include="CoreTest\ItemTest.cs" />
+    <Compile Include="CoreTest\StandardPlayerTest.cs" />
+    <Compile Include="PostacTestHelper.cs" />
+    <Compile Include="Utility\BagTest.cs" />
+    <Compile Include="Utility\DiceTest.cs" />
+    <Compile Include="CoreTest\GameTest.cs" />
+    <Compile Include="Data\ItemRepositoryTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CoreTest\StandardRulesTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MagicznyMiecz.Common\MagicznyMiecz.Common.csproj">
+      <Project>{0F4C62D2-3BEF-492D-8D31-DAE1B0DFB03F}</Project>
+      <Name>MagicznyMiecz.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagicznyMiecz.Engine\MagicznyMiecz.Engine.csproj">
+      <Project>{D190BDFF-2184-46E5-8105-279C5BD0D6E0}</Project>
+      <Name>MagicznyMiecz.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
